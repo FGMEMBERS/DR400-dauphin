@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-dauphin by PAF team
+ # April 2012 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<PropertyList>
+
+  <name>config</name>
+  <modal>false</modal>
+  <layout>vbox</layout>
+  <padding>80</padding>
+
+  <group>
+    <layout>hbox</layout>
+    <empty>
+      <stretch>1</stretch>
+    </empty>		
+    <text>
+      <label>Robin DR400-dauphin options</label>
+    </text>
+    <empty>
+      <stretch>1</stretch>
+    </empty>
+    <button>
+      <pref-width>16</pref-width>
+      <pref-height>16</pref-height>
+      <legend></legend>
+      <keynum>27</keynum>
+      <border>2</border>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
+
+  <hrule/>
+
+  <group>
+    <halign>center</halign>
+    <layout>hbox</layout>
+
+    <group>
+      <layout>vbox</layout>
+      
+      <group>
+        <layout>hbox</layout>
+        <text>
+          <label>Display</label>
+          <halign>left</halign>
+        </text>
+        <hrule>
+          <stretch>true</stretch>
+        </hrule>
+      </group>
+
+      <checkbox>
+        <halign>left</halign>
+        <label>Show Yokes</label>
+        <property>sim/model/config/show-yokes</property>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/config/show-yokes</property>
+        </binding>
+      </checkbox>
+
+      <checkbox>
+        <halign>left</halign>
+        <label>Show Pilot in cockpit view</label>
+        <property>sim/model/config/show-pilot</property>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/config/show-pilot</property>
+        </binding>
+      </checkbox>
+
+      <checkbox>
+        <halign>left</halign>
+        <label>Glass reflection on instruments</label>
+        <property>sim/model/config/glass-reflection-instruments</property>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/config/glass-reflection-instruments</property>
+        </binding>
+      </checkbox>
+
+    </group>
+
+    <vrule/>
+
+    <group>
+      <layout>vbox</layout>
+
+      <group>
+        <layout>hbox</layout>
+        <button>
+          <legend>Autostart</legend>
+          <default>false</default>
+          <pref-width>90</pref-width>
+          <binding>
+            <command>property-toggle</command>
+            <property>sim/model/start-idling</property>
+          </binding>
+        </button>
+      </group>
+
+      <group>
+        <layout>hbox</layout>
+        <button>
+          <legend>Checklist</legend>
+          <default>false</default>
+          <pref-width>90</pref-width>
+          <binding>
+            <command>dialog-show</command>
+            <dialog-name>checklist</dialog-name>
+          </binding>
+        </button>
+      </group>
+
+      <group>
+        <layout>hbox</layout>
+        <button>
+          <legend>Tutorial</legend>
+          <default>false</default>
+          <pref-width>90</pref-width>
+          <binding>
+            <command>dialog-show</command>
+            <dialog-name>tutorial</dialog-name>
+          </binding>
+        </button>
+      </group>
+
+      <group>
+        <layout>hbox</layout>
+        <button>
+          <legend>Liveries</legend>
+          <default>false</default>
+          <pref-width>90</pref-width>
+          <binding>
+            <command>nasal</command>
+            <script>aircraft.livery.dialog.toggle()</script>
+          </binding>
+        </button>
+      </group>
+
+      <group>
+        <layout>hbox</layout>
+        <button>
+          <legend>Help</legend>
+          <default>false</default>
+          <pref-width>90</pref-width>
+          <binding>
+            <command>nasal</command>
+            <script>gui.showHelpDialog("/sim/help")</script>
+          </binding>
+        </button>
+      </group>
+    </group>
+  </group>
+
+  <hrule/>
+
+  <group>
+    <layout>vbox</layout>
+    <button>
+      <legend>Close</legend>
+      <default>true</default>
+      <key>Esc</key>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
+
+</PropertyList>

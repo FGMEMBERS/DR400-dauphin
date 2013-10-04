@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  <sim>
+    <model>
+      <livery>
+        <name type="string">Default</name>
+        <fuselage-texture>fuselage.png</fuselage-texture>
+        <ailes-texture>ailes.png</ailes-texture>
+      </livery>
+    </model>
+  </sim>
+</PropertyList>

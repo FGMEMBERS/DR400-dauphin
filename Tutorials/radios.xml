@@ -1,0 +1,235 @@
+<PropertyList>
+  <name>Radio Tuning</name>
+  <description>
+    Radios are used both for communication, and also for navigation.
+    
+This tutorial will teach you how to tune the radio of the aircraft to pick up
+the ATIS - Automatic Terminal Information Service. This is broadcast by all
+but the smallest airports and provides information on the current ground-level
+weather, the altimeter setting and the runway in use.
+  </description>
+  <timeofday>morning</timeofday>
+  <presets>
+    <airport-id>KLVK</airport-id>
+    <on-ground>1</on-ground>
+    <runway>12</runway>
+    <altitude-ft>-9999</altitude-ft>
+    <latitude-deg>37.6952</latitude-deg>
+    <longitude-deg>-121.8167</longitude-deg>
+    <heading-deg>175.0</heading-deg>
+    <airspeed-kt>0</airspeed-kt>
+    <glideslope-deg>0</glideslope-deg>
+    <offset-azimuth-deg>0</offset-azimuth-deg>
+    <offset-distance-nm>0</offset-distance-nm>
+  </presets>
+  
+  <init>
+    <set>
+      <property>/controls/gear/brake-parking</property>
+      <value>1</value>
+    </set>
+    <set>
+      <property>/controls/flight/flaps</property>
+      <value>0.0</value>
+    </set>
+    <set>
+      <property>/controls/engines/engine/magnetos</property>
+      <value>0</value>
+    </set>
+    <set>
+      <property>/controls/engines/engine/throttle</property>
+      <value>0.0</value>
+    </set>
+    <set>
+      <property>/engines/engine/running</property>
+      <value>false</value>
+    </set>
+    <set>
+      <property>/instrumentation/adf/frequencies/selected-khz</property>
+      <value>340</value>
+    </set>
+    <set>
+      <property>/environment/weather-scenario</property>
+      <value>Fair weather</value>
+    </set>
+    <set>
+      <property>/controls/flight/elevator-trim</property>
+      <value>0.17</value>
+    </set>
+    <set>
+      <property>/instrumentation/comm[0]/volume</property>
+      <value>1.0</value>
+    </set>
+    <set>
+      <property>/instrumentation/comm[0]/power-btn</property>
+      <value>true</value>
+    </set>
+    <set>
+      <property>/controls/switches/master-avionics</property>
+      <value>true</value>
+    </set>
+  </init>
+  
+  <step>
+    <message>In this lesson, you'll learn how to tune the radio to the Livermore ATIS.
+      The radio is in the middle of the center console.</message>
+    <wait>10</wait>
+    <set>
+      <property>/controls/electric/battery-switch</property>
+      <value>true</value>
+    </set>
+  </step>
+  
+  <step>
+    <message>There are 2 radios on this aircraft - one for communication (COMM1) and one for navigation (NAV1).
+      Each radio has an active frequency and a standby frequency.
+      We tune the radio by changing the standby frequency, and then swapping the active and standby. </message>
+    <wait>10</wait>
+  </step>
+  <step>
+    <message>To change the standby frequency, you can click on the left side of the knob to decrease it, and the right side to increase it. </message>
+    <view>
+      <heading-offset-deg>334.4</heading-offset-deg>
+      <pitch-offset-deg>-19.6</pitch-offset-deg>
+      <roll-offset-deg>0.0</roll-offset-deg>
+      <x-offset-m>-0.2</x-offset-m>
+      <y-offset-m>0.6</y-offset-m>
+      <z-offset-m>-1.2</z-offset-m>
+      <field-of-view>23.3</field-of-view>
+    </view>
+    <marker>
+      <x-m>-1.9167</x-m>
+      <y-m>0.1258</y-m>
+      <z-m>0.3008</z-m>
+      <scale>1.1333</scale>
+    </marker>
+  </step>
+  <step>
+    <message>Using the middle mouse button changes the number on the left of the decimal place, while the left mouse button changes the number after the decimal place.</message>
+    <view>
+      <heading-offset-deg>334.4</heading-offset-deg>
+      <pitch-offset-deg>-19.6</pitch-offset-deg>
+      <roll-offset-deg>0.0</roll-offset-deg>
+      <x-offset-m>-0.2</x-offset-m>
+      <y-offset-m>0.6</y-offset-m>
+      <z-offset-m>-1.2</z-offset-m>
+      <field-of-view>23.3</field-of-view>
+    </view>
+    <marker>
+      <x-m>-1.9167</x-m>
+      <y-m>0.1258</y-m>
+      <z-m>0.3008</z-m>
+      <scale>1.1333</scale>
+    </marker>
+  </step>
+  <step>
+    <message>Set the standby frequency to 119.65 MHz. This is the ATIS frequency for Livermore, and is printed on sectional charts.</message>
+    <view>
+      <heading-offset-deg>334.4</heading-offset-deg>
+      <pitch-offset-deg>-19.6</pitch-offset-deg>
+      <roll-offset-deg>0.0</roll-offset-deg>
+      <x-offset-m>-0.2</x-offset-m>
+      <y-offset-m>0.6</y-offset-m>
+      <z-offset-m>-1.2</z-offset-m>
+      <field-of-view>23.3</field-of-view>
+    </view>
+    <marker>
+      <x-m>-1.9167</x-m>
+      <y-m>0.1258</y-m>
+      <z-m>0.3008</z-m>
+      <scale>1.1333</scale>
+    </marker>
+    <exit>
+      <condition>
+        <and>
+          <greater-than>
+            <property>/instrumentation/comm[0]/frequencies/standby-mhz</property>
+            <value>119.64</value>
+          </greater-than>
+          <less-than>
+            <property>/instrumentation/comm[0]/frequencies/standby-mhz</property>
+            <value>119.66</value>
+          </less-than>
+        </and>
+      </condition>
+    </exit>
+  </step>
+  <step>
+    <message>Now, switch the active and standby frequencies by pressing the swap button so the active frequency is 119.650MHz.</message>
+    <view>
+      <heading-offset-deg>334.4</heading-offset-deg>
+      <pitch-offset-deg>-19.6</pitch-offset-deg>
+      <roll-offset-deg>0.0</roll-offset-deg>
+      <x-offset-m>-0.2</x-offset-m>
+      <y-offset-m>0.6</y-offset-m>
+      <z-offset-m>-1.2</z-offset-m>
+      <field-of-view>23.3</field-of-view>
+    </view>
+    <marker>
+      <x-m>-1.9167</x-m>
+      <y-m>0.1008</y-m>
+      <z-m>0.3100</z-m>
+      <scale>0.7500</scale>
+    </marker>
+    <exit>
+      <condition>
+        <and>
+          <greater-than>
+            <property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
+            <value>119.64</value>
+          </greater-than>
+          <less-than>
+            <property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
+            <value>119.66</value>
+          </less-than>
+        </and>
+      </condition>
+    </exit>
+  </step>
+  
+  <step>
+    <message>Listen to the ATIS message. If you cannot hear it,
+      look at the Sound Configuration dialog on the File menu.
+      It will tell you the current weather conditions, the runway in use, and the altimeter setting.</message>
+  </step>
+  
+  <step>
+    <message>Once you've heard it, you can switch it off by swapping the frequency back to standby. Do that now.</message>
+    <view>
+      <heading-offset-deg>334.4</heading-offset-deg>
+      <pitch-offset-deg>-19.6</pitch-offset-deg>
+      <roll-offset-deg>0.0</roll-offset-deg>
+      <x-offset-m>-0.2</x-offset-m>
+      <y-offset-m>0.6</y-offset-m>
+      <z-offset-m>-1.2</z-offset-m>
+      <field-of-view>23.3</field-of-view>
+    </view>
+    <marker>
+      <x-m>-1.9167</x-m>
+      <y-m>0.1008</y-m>
+      <z-m>0.3100</z-m>
+      <scale>0.7500</scale>
+    </marker>
+    <exit>
+      <condition>
+        <and>
+          <greater-than>
+            <property>/instrumentation/comm[0]/frequencies/standby-mhz</property>
+            <value>119.64</value>
+          </greater-than>
+          <less-than>
+            <property>/instrumentation/comm[0]/frequencies/standby-mhz</property>
+            <value>119.66</value>
+          </less-than>
+        </and>
+      </condition>
+    </exit>
+  </step>
+  
+  <end>
+    <message>Great job. COMM2 is located immediately below COMM1 in the radio stack, and is tuned in the same way.
+      The NAV radios work in exactly the same way, except they use a different frequency
+      range, and their output goes to the navigational instruments.</message>
+  </end>
+  
+</PropertyList>
