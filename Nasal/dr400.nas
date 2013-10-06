@@ -239,6 +239,15 @@ var Engine = {
         }
 	ctemp = (rpm * 0.0029);
 	me.carb_temp.setValue(et0 - ctemp + cheat);
+        ######################################
+        ############ PROP FRICTION ###########
+        ######################################
+        if(!getprop("/fdm/jsbsim/propulsion/engine/set-running") and
+           getprop("/systems/electrical/outputs/starter") < 8) {
+           setprop("/fdm/jsbsim/propulsion/engine/friction-hp", 20);
+        }else{
+           setprop("/fdm/jsbsim/propulsion/engine/friction-hp", 0);
+        }
     },
 };
 

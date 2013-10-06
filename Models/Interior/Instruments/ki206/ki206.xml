@@ -36,12 +36,10 @@ Syd Adams
     <object-name>vitre</object-name>
   </animation>
 
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/DR400-dauphin/Models/Effects/glass_shader.png</texture>
+  <effect>
+    <inherits-from>Aircraft/DR400-dauphin/Models/Effects/effects-vitres-interior</inherits-from>
     <object-name>vitre</object-name>
-  </animation>
+  </effect>
 
   <animation>
     <type>select</type>

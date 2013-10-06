@@ -20,6 +20,19 @@
     <texture n="4">
       <image>Aircraft/DR400-dauphin/Models/Effects/reflectmap-interior.png</image>
     </texture>
+<!--###BEGIN interior cubemap -->
+			<texture n="5">
+				<type>cubemap</type>
+				<images>
+					<positive-x>Aircraft/DR400-dauphin/Models/Effects/Textures/Cubemap/Interior/back.png</positive-x>
+					<negative-x>Aircraft/DR400-dauphin/Models/Effects/Textures/Cubemap/Interior/front.png</negative-x>
+					<positive-y>Aircraft/DR400-dauphin/Models/Effects/Textures/Cubemap/Interior/right.png</positive-y>
+					<negative-y>Aircraft/DR400-dauphin/Models/Effects/Textures/Cubemap/Interior/left.png</negative-y>
+					<positive-z>Aircraft/DR400-dauphin/Models/Effects/Textures/Cubemap/Interior/up.png</positive-z>
+					<negative-z>Aircraft/DR400-dauphin/Models/Effects/Textures/Cubemap/Interior/down.png</negative-z>
+				</images>
+			</texture>
+<!-- ###END interior cubemap -->
     <ambient-correction type="float"> 0.1 </ambient-correction>
   </parameters>
 

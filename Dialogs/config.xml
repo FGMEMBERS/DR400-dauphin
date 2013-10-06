@@ -78,7 +78,7 @@
         </binding>
       </checkbox>
 
-      <checkbox>
+      <!--<checkbox>
         <halign>left</halign>
         <label>Glass reflection on instruments</label>
         <property>sim/model/config/glass-reflection-instruments</property>
@@ -86,7 +86,7 @@
           <command>property-toggle</command>
           <property>sim/model/config/glass-reflection-instruments</property>
         </binding>
-      </checkbox>
+      </checkbox>-->
 
       <group>
         <layout>hbox</layout>

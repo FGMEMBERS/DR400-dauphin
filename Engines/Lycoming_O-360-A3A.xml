@@ -13,6 +13,8 @@
   <minmp unit="INHG">          8.5 </minmp>
   <maxmp unit="INHG">         28.5 </maxmp>
   <displacement unit="IN3"> 342.00 </displacement>
+  <static-friction>           20.0 </static-friction>
+  <starter-torque>           120.0 </starter-torque>
   <maxhp>        180.00 </maxhp>
   <cycles>         4.0 </cycles>
   <idlerpm>      500.0 </idlerpm>
