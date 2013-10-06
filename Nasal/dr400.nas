@@ -17,10 +17,16 @@ foreach( var config; props.globals.getNode("/sim/model/config").getChildren() ) 
 }
 
 #####################################
-# Dialogs (please comment the version)
+# Dialogs
 #####################################
 
 var config_dlg = gui.Dialog.new("/sim/gui/dialogs/config/dialog", getprop("/sim/aircraft-dir")~"/Dialogs/config.xml");
+
+#####################################
+# Canopy
+#####################################
+
+var canopy = aircraft.door.new("controls/canopy", 3);
 
 ###############################################
 #Fuel Management (+ Daniel Dubreuil, March 2013)
@@ -408,6 +414,7 @@ var eltmsg = func {
         setprop("/sim/multiplay/chat", help_string);
         setprop("/sim/freeze/clock", 1);
         setprop("/sim/freeze/master", 1);
+        setprop("/sim/crashed", 0);
         screen.log.write("Press p to resume");
       }
     }
@@ -460,7 +467,9 @@ global_system = func{
   terrain_survol();
   timeFormat();
   EngineMain.update(0);
-  dr400.physics();
+  if(getprop("/sim/model/config/breakable-gears")){
+    dr400.physics();
+  }
 
   settimer(global_system, 0);
 
@@ -472,19 +481,41 @@ global_system = func{
 ############################################
 var timeOfNegatifG = 0;
 upsideDown_system = func{
-
-  if(getprop("fdm/jsbsim/accelerations/Nz") < -0.5){
-    timeOfNegatifG += 1;
-    if(timeOfNegatifG > 4){
-      setprop("controls/fuel/tank/boost-pump", 0);
-      setprop("engines/engine/fuel-pressure-psi", 0);
+  if(getprop("/sim/mode/config/simulate-g-force")){
+    if(getprop("fdm/jsbsim/accelerations/Nz") < -0.5){
+      timeOfNegatifG += 1;
+      if(timeOfNegatifG > 4){
+        setprop("controls/fuel/tank/boost-pump", 0);
+        setprop("engines/engine/fuel-pressure-psi", 0);
+        timeOfNegatifG = 0;
+      }
+    }else{
       timeOfNegatifG = 0;
     }
-  }else{
-    timeOfNegatifG = 0;
   }
   settimer(upsideDown_system, 1);
 }
+
+
+############################################
+# crash-detect
+############################################
+
+setlistener("fdm/jsbsim/systems/crash-detect/over-g-failure", func(n){
+  if(getprop("/sim/model/config/simulate-g-force") and n.getBoolValue()){
+    if (!getprop("/sim/crashed")){
+      setprop("/sim/crashed", 1);
+    }
+  }
+});
+
+setlistener("fdm/jsbsim/systems/crash-detect/crashed", func(n){
+  if(getprop("/sim/model/config/enable-crash") and n.getBoolValue()){
+    if (!getprop("/sim/crashed")){
+      setprop("/sim/crashed", 1);
+    }
+  }
+});
 
 ##########################################
 # SetListerner must be at the end of this file

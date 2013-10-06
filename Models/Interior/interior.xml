@@ -104,7 +104,7 @@
     <type>translate</type>
     <object-name>canopy-int</object-name>
     <object-name>poignee-int</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>controls/canopy/position-norm</property>
     <interpolation>
       <entry><ind> 0.00 </ind><dep> 0.00 </dep></entry>
       <entry><ind> 0.12 </ind><dep> 0.00 </dep></entry>
@@ -120,7 +120,7 @@
   <animation>
     <type>rotate</type>
     <object-name>poignee-int</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>controls/canopy/position-norm</property>
     <interpolation>
       <entry><ind>  0.00 </ind><dep>  0.00 </dep></entry>
       <entry><ind>  0.12 </ind><dep> 45.00 </dep></entry>
@@ -454,7 +454,7 @@
       <button>0</button>
       <binding>
         <command>nasal</command>
-        <script>globals.dr400.doorsystem.crewexport();</script>
+        <script>dr400.canopy.toggle();</script>
       </binding>
     </action>
   </animation>

@@ -34,22 +34,17 @@
           structure will fail at lower G loadings.
           -->
      <switch name="over-g-failure">
-          <test value="1">
-                systems/crash-detect/wing-load gt 11500
+          <test logic="OR" value="1">
+                systems/crash-detect/wing-load gt 8500
+                systems/crash-detect/wing-load lt -3500
           </test>
-          <test value="1">
-                systems/crash-detect/wing-load lt -7500
-          </test>
-          <output>systems/crash-detect/crashed</output>
           <output> systems/crash-detect/over-g-failure </output>
      </switch>
 
      <switch name="over-g">
-          <test value="1">
-                systems/crash-detect/wing-load gt 10000
-          </test>
-          <test value="1">
-                systems/crash-detect/wing-load lt -6000
+          <test logic="OR" value="1">
+                systems/crash-detect/wing-load gt 6000
+                systems/crash-detect/wing-load lt -2500
           </test>
           <output> systems/crash-detect/over-g </output>
      </switch>
@@ -79,7 +74,6 @@
                 simulation/sim-time-sec gt 1.0
           </test>
           <output>systems/crash-detect/crashed</output>
-          <output> systems/crash-detect/impact </output>
      </switch>
 
   </channel>

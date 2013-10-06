@@ -64,6 +64,9 @@
         <light-cone type="bool">1</light-cone>
         <details-high type="bool">0</details-high>
         <glass-reflection-instruments type="bool">1</glass-reflection-instruments>
+        <enable-crash type="bool">0</enable-crash>
+        <breakable-gears type="bool">0</breakable-gears>
+        <simulate-g-force type="bool">0</simulate-g-force>
       </config>
     </model>
 
@@ -189,7 +192,7 @@
         <desc>Canopy</desc>
         <binding>
           <command>nasal</command>
-          <script>globals.dr400.doorsystem.crewexport();</script>
+          <script>dr400.canopy.toggle();</script>
         </binding>
       </key>
       <key n="115">
@@ -382,7 +385,6 @@
 
   <nasal>
     <dr400>
-      <file>Aircraft/DR400-dauphin/Nasal/doors.nas</file>
       <file>Aircraft/DR400-dauphin/Nasal/physics.nas</file>
       <file>Aircraft/DR400-dauphin/Nasal/light.nas</file>
       <file>Aircraft/DR400-dauphin/Nasal/liveries.nas</file>

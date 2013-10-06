@@ -88,6 +88,47 @@
         </binding>
       </checkbox>
 
+      <group>
+        <layout>hbox</layout>
+        <text>
+          <label>Realism</label>
+          <halign>left</halign>
+        </text>
+        <hrule>
+          <stretch>true</stretch>
+        </hrule>
+      </group>
+
+      <checkbox>
+        <halign>left</halign>
+        <label>Enable crash</label>
+        <property>sim/model/config/enable-crash</property>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/config/enable-crash</property>
+        </binding>
+      </checkbox>
+
+      <checkbox>
+        <halign>left</halign>
+        <label>Breakable gears</label>
+        <property>sim/model/config/breakable-gears</property>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/config/breakable-gears</property>
+        </binding>
+      </checkbox>
+
+      <checkbox>
+        <halign>left</halign>
+        <label>Simulate G force</label>
+        <property>sim/model/config/simulate-g-force</property>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/config/simulate-g-force</property>
+        </binding>
+      </checkbox>
+
     </group>
 
     <vrule/>
