@@ -76,6 +76,14 @@
 -->
 
   <animation>
+    <type>select</type>
+    <object-name>light</object-name>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+  </animation>
+
+  <animation>
     <type>material</type>
     <object-name>neon</object-name>
     <emission>
