@@ -989,7 +989,7 @@
   <text>
     <name>textosg</name>
     <type type="string">literal</type>
-    <text type="string">ADF Recever</text>
+    <text type="string">ADF Receiver</text>
     <draw-text type="bool">true</draw-text>
     <font>Helvetica.txf</font>
     <character-size type="double">0.014</character-size>

@@ -13,7 +13,7 @@
   <chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
 
   <view n="100">
-    <name>Aft Passanger View</name>
+    <name>Aft Passenger View</name>
     <internal archive="y">true</internal>
     <type>lookfrom</type>
     <config>
@@ -45,7 +45,7 @@
   </view>
 
   <view n="102">
-    <name>Left Rear Passanger View</name>
+    <name>Left Rear Passenger View</name>
     <internal archive="y">true</internal>
     <type>lookfrom</type>
     <config>
@@ -61,7 +61,7 @@
   </view>
 
   <view n="103">
-    <name>Right Rear Passanger View</name>
+    <name>Right Rear Passenger View</name>
     <internal archive="y">true</internal>
     <type>lookfrom</type>
     <config>
