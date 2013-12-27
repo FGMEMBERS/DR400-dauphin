@@ -33,6 +33,31 @@
     <object-name>warning-lights0</object-name>
   </animation>
 
+   <animation>
+    <type>material</type>
+    <texture>interior.png</texture>
+    <texture-prop>interior-texture</texture-prop>
+    <property-base>sim/model/livery</property-base>
+    <object-name>aux-tank</object-name>
+    <object-name>canopy-int</object-name>
+    <object-name>carb-heat</object-name>
+    <object-name>flaps-command</object-name>
+    <object-name>fuel-selector</object-name>
+    <object-name>interior</object-name>
+    <object-name>left-pedals</object-name>
+    <object-name>light-knob1</object-name>
+    <object-name>light-knob2</object-name>
+    <object-name>manche</object-name>
+    <object-name>mixture</object-name>
+    <object-name>parking-brake</object-name>
+    <object-name>poignee-int</object-name>
+    <object-name>radio-knob</object-name>
+    <object-name>right-pedals</object-name>
+    <object-name>throttle</object-name>
+    <object-name>trim-wheel</object-name>
+    <object-name>warning-lights0</object-name>
+  </animation>
+
   <animation>
     <type>material</type>
     <object-name>aux-tank</object-name>

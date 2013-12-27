@@ -6,7 +6,8 @@
       <livery>
         <name type="string">Default</name>
         <fuselage-texture>fuselage.png</fuselage-texture>
-        <ailes-texture>ailes.png</ailes-texture>
+        <wings-texture>wings.png</wings-texture>
+        <interior-texture>interior.png</interior-texture>
       </livery>
     </model>
   </sim>

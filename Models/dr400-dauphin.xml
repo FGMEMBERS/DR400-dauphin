@@ -48,7 +48,7 @@
     <object-name>tringle-rudderL</object-name>
     <object-name>tringle-rudderR</object-name>
 
-    <!-- ailes.png -->
+    <!-- wings.png -->
     <object-name>aileronL</object-name>
     <object-name>aileronR</object-name>
     <object-name>elevator</object-name>
@@ -98,8 +98,8 @@
 
    <animation>
     <type>material</type>
-    <texture>ailes.png</texture>
-    <texture-prop>ailes-texture</texture-prop>
+    <texture>wings.png</texture>
+    <texture-prop>wings-texture</texture-prop>
     <property-base>sim/model/livery</property-base>
     <object-name>aileronL</object-name>
     <object-name>aileronR</object-name>
@@ -144,7 +144,7 @@
   </effect>
 
   <effect>
-    <inherits-from>Aircraft/DR400-dauphin/Models/Effects/effects-ailes</inherits-from>
+    <inherits-from>Aircraft/DR400-dauphin/Models/Effects/effects-wings</inherits-from>
     <object-name>aileronL</object-name>
     <object-name>aileronR</object-name>
     <object-name>elevator</object-name>
@@ -255,14 +255,14 @@
 
   <!-- Transparent objects -->
   <effect>
-    <inherits-from>Aircraft/DR400-dauphin/Models/Effects/effects-vitres</inherits-from>
+    <inherits-from>Aircraft/DR400-dauphin/Models/Effects/effects-glasses</inherits-from>
     <object-name>rear-windows</object-name>
     <object-name>front-windows</object-name>
     <object-name>landing-light-windows</object-name>
   </effect>
 
   <effect>
-    <inherits-from>Aircraft/DR400-dauphin/Models/Effects/effects-vitres-interior</inherits-from>
+    <inherits-from>Aircraft/DR400-dauphin/Models/Effects/effects-glasses-interior</inherits-from>
     <object-name>rear-windows-int</object-name>
     <object-name>front-windows-int</object-name>
   </effect>

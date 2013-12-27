@@ -9,7 +9,7 @@ OBJECT poly
 name "aileronL"
 data 8
 aileronL
-texture "ailes.png"
+texture "wings.png"
 texrep 1 1
 crease 30.000000
 numvert 164
@@ -761,7 +761,7 @@ OBJECT poly
 name "aileronR"
 data 8
 aileronR
-texture "ailes.png"
+texture "wings.png"
 texrep 1 1
 crease 30.000000
 numvert 164
@@ -7446,7 +7446,7 @@ OBJECT poly
 name "elevator"
 data 8
 elevator
-texture "ailes.png"
+texture "wings.png"
 texrep 1 1
 crease 30.000000
 numvert 790
@@ -19479,7 +19479,7 @@ OBJECT poly
 name "flaps-axis"
 data 10
 flaps-axis
-texture "ailes.png"
+texture "wings.png"
 texrep 1 1
 crease 30.000000
 numvert 480
@@ -21601,7 +21601,7 @@ OBJECT poly
 name "flapsL"
 data 6
 flapsL
-texture "ailes.png"
+texture "wings.png"
 texrep 1 1
 crease 30.000000
 numvert 154
@@ -22327,7 +22327,7 @@ OBJECT poly
 name "flapsR"
 data 6
 flapsR
-texture "ailes.png"
+texture "wings.png"
 texrep 1 1
 crease 30.000000
 numvert 154
@@ -81429,7 +81429,7 @@ OBJECT poly
 name "landing-light-windows"
 data 21
 landing-light-windows
-texture "ailes.png"
+texture "wings.png"
 texrep 1 1
 crease 30.000000
 numvert 56
@@ -81891,7 +81891,7 @@ OBJECT poly
 name "landing-lightL"
 data 14
 landing-lightL
-texture "ailes.png"
+texture "wings.png"
 texrep 1 1
 crease 30.000000
 numvert 21
@@ -82042,7 +82042,7 @@ OBJECT poly
 name "landing-lightR"
 data 14
 landing-lightR
-texture "ailes.png"
+texture "wings.png"
 texrep 1 1
 crease 30.000000
 numvert 21
@@ -103696,7 +103696,7 @@ OBJECT poly
 name "nav-lightL"
 data 10
 nav-lightL
-texture "ailes.png"
+texture "wings.png"
 texrep 1 1
 crease 30.000000
 numvert 183
@@ -105509,7 +105509,7 @@ OBJECT poly
 name "nav-lightR"
 data 10
 nav-lightR
-texture "ailes.png"
+texture "wings.png"
 texrep 1 1
 crease 30.000000
 numvert 187
@@ -141144,7 +141144,7 @@ OBJECT poly
 name "trim-elevator"
 data 13
 trim-elevator
-texture "ailes.png"
+texture "wings.png"
 texrep 1 1
 crease 30.000000
 numvert 268
@@ -141964,7 +141964,7 @@ OBJECT poly
 name "tringle-AileronL-dwn"
 data 20
 tringle-AileronL-dwn
-texture "ailes.png"
+texture "wings.png"
 texrep 1 1
 crease 30.000000
 numvert 240
@@ -143030,7 +143030,7 @@ OBJECT poly
 name "tringle-AileronL-up"
 data 19
 tringle-AileronL-up
-texture "ailes.png"
+texture "wings.png"
 texrep 1 1
 crease 30.000000
 numvert 242
@@ -144098,7 +144098,7 @@ OBJECT poly
 name "tringle-aileronR-dwn"
 data 20
 tringle-aileronR-dwn
-texture "ailes.png"
+texture "wings.png"
 texrep 1 1
 crease 30.000000
 numvert 240
@@ -145164,7 +145164,7 @@ OBJECT poly
 name "tringle-aileronR-up"
 data 19
 tringle-aileronR-up
-texture "ailes.png"
+texture "wings.png"
 texrep 1 1
 crease 30.000000
 numvert 240
@@ -148360,7 +148360,7 @@ OBJECT poly
 name "wings"
 data 5
 wings
-texture "ailes.png"
+texture "wings.png"
 texrep 1 1
 crease 30.000000
 numvert 2125

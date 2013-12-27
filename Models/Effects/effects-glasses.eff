@@ -4,7 +4,7 @@
 	Switches automaticaly to an effect similar to model-transparent when Rembrandt is enabled.
 	-->
 <PropertyList>
-    <name>effects-vitres</name>
+    <name>effects-glasses</name>
 		<inherits-from>Effects/model-combined-transparent</inherits-from>
 		<parameters>
 			<normalmap-enabled type="int">0</normalmap-enabled>

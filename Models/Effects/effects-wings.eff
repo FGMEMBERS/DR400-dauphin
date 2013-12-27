@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PropertyList>
-  <name>DR400-dauphin-effects-ailes</name>
+  <name>DR400-dauphin-effects-wings</name>
   <inherits-from>Effects/model-combined-deferred</inherits-from>
 
   <parameters>
@@ -8,7 +8,7 @@
     <normalmap-enabled type="int"> 0 </normalmap-enabled>
     <normalmap-dds type="int"> 0 </normalmap-dds>
     <texture n="2">
-      <!--<image>Aircraft/DR400-dauphin/Models/Effects/normalmap-ailes.png</image>-->
+      <!--<image>Aircraft/DR400-dauphin/Models/Effects/normalmap-wings.png</image>-->
     </texture>
     <!-- Light map -->
     <lightmap-enabled type="int"> 0 </lightmap-enabled>
@@ -18,7 +18,7 @@
     <reflection-correction type="float"> 0.0 </reflection-correction>
     <reflection-dynamic type="int"> 0 </reflection-dynamic>
     <texture n="4">
-      <image>Aircraft/DR400-dauphin/Models/Effects/reflectmap-ailes.png</image>
+      <image>Aircraft/DR400-dauphin/Models/Effects/reflectmap-wings.png</image>
     </texture>
     <ambient-correction type="float"> 0.1 </ambient-correction>
   </parameters>

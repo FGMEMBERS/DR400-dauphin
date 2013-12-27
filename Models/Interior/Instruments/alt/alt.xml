@@ -32,7 +32,7 @@
   </animation>
 
   <effect>
-    <inherits-from>Aircraft/DR400-dauphin/Models/Effects/effects-vitres-interior</inherits-from>
+    <inherits-from>Aircraft/DR400-dauphin/Models/Effects/effects-glasses-interior</inherits-from>
     <object-name>vitre</object-name>
   </effect>
 
