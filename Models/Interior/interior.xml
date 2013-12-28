@@ -23,7 +23,6 @@
     <object-name>light-knob1</object-name>
     <object-name>light-knob2</object-name>
     <object-name>manche</object-name>
-    <object-name>mixture</object-name>
     <object-name>parking-brake</object-name>
     <object-name>poignee-int</object-name>
     <object-name>radio-knob</object-name>
@@ -48,7 +47,6 @@
     <object-name>light-knob1</object-name>
     <object-name>light-knob2</object-name>
     <object-name>manche</object-name>
-    <object-name>mixture</object-name>
     <object-name>parking-brake</object-name>
     <object-name>poignee-int</object-name>
     <object-name>radio-knob</object-name>
@@ -70,7 +68,6 @@
     <object-name>light-knob1</object-name>
     <object-name>light-knob2</object-name>
     <object-name>manche</object-name>
-    <object-name>mixture</object-name>
     <object-name>parking-brake</object-name>
     <object-name>poignee-int</object-name>
     <object-name>radio-knob</object-name>
