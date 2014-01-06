@@ -536,6 +536,7 @@ setlistener("/sim/signals/fdm-initialized", func{
   setprop("/environment/terrain-bumpiness",0);
   setprop("/environment/terrain-rolling-friction",0.02);
   setprop("/instrumentation/nav[0]/power-btn",0); #force OFF
+  setprop("/instrumentation/nav[1]/power-btn",0); #force OFF
   setprop("/instrumentation/adf[0]/power-btn",0);
   setprop("/instrumentation/adf[0]/volume",0);
   setprop("/instrumentation/adf[0]/volume-norm",0);
