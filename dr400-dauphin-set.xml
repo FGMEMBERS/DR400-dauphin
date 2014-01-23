@@ -303,6 +303,12 @@
     </settings>
   </autopilot>
 
+  <engines>
+    <engine n="0">
+      <has-been-started-at-least-once type="bool">0</has-been-started-at-least-once>
+    </engine>
+  </engines>
+
   <consumables>
     <fuel>
       <tank n="0">

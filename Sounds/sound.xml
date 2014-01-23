@@ -158,9 +158,12 @@ Christian Thiriot: Sons modifiés sur base de sons réels de moteur Lycoming (Ja
       <name>stop</name>
       <path>Aircraft/DR400-dauphin/Sounds/shutdown.wav</path>
       <condition>
-        <not>
-          <property>/engines/engine/running</property>
-        </not>
+        <and>
+          <property>/engines/engine/has-been-started-at-least-once</property>
+          <not>
+            <property>/engines/engine/running</property>
+          </not>
+        </and>
       </condition>
       <volume>
         <property>/sim/current-view/internal</property>

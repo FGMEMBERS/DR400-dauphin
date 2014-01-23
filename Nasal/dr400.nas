@@ -526,6 +526,14 @@ setlistener("fdm/jsbsim/systems/crash-detect/crashed", func(n){
   }
 });
 
+
+var firstEngineStartup = setlistener("/engines/engine/running", func(val) {
+  if( val.getBoolValue() ) {
+    setprop("/engines/engine/has-been-started-at-least-once", 1);
+    removelistener(firstEngineStartup);
+  }
+});
+
 ##########################################
 # SetListerner must be at the end of this file
 ##########################################
