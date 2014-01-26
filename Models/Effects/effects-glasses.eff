@@ -5,7 +5,7 @@
 	-->
 <PropertyList>
     <name>effects-glasses</name>
-		<inherits-from>Effects/model-combined-transparent</inherits-from>
+		<inherits-from>Effects/model-transparent</inherits-from>
 		<parameters>
 			<normalmap-enabled type="int">0</normalmap-enabled>
 			<lightmap-enabled type="int">0</lightmap-enabled>
