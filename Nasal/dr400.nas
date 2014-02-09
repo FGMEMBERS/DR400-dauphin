@@ -8,10 +8,6 @@
 ##
 ###############################################################################
 
-# Do terrain modelling ourselves.
-setprop("sim/fdm/surface/override-level", 1);
-
-
 #####################################
 # Save data
 #####################################
@@ -202,7 +198,7 @@ var Engine = {
 	m.Lrunning =      setlistener("engines/engine["~eng_num~"]/running",func (rn){m.running=rn.getValue()},0,0);
 	return m;
     },
-#### update ####
+    #### update ####
     update : func(eng_num){
         var rpm =     me.rpm.getValue();
 	var mp =      me.mp.getValue();
@@ -300,45 +296,6 @@ var set_levers = func(type,num,min,max){
   if(ttl<min)ttl=min;
   setprop(ctrl[num],ttl);
   if(getprop(cpld))setprop(ctrl[1-num],ttl);
-}
-
-##########################################
-# Ground Detection
-##########################################
-
-var terrain_survol = func {
-  var lat = getprop("/position/latitude-deg");
-  var lon = getprop("/position/longitude-deg");
-
-  var info = geodinfo(lat, lon);
-  if (info != nil) {
-    if (info[1] != nil){
-      if (info[1].solid !=nil){
-        setprop("/environment/terrain-type",info[1].solid);
-        if( !getprop("sim/freeze/replay-state") and 
-            !info[1].solid and 
-            ((getprop("/gear/gear[0]/compression-norm") > 0.12) or 
-            (getprop("/gear/gear[1]/compression-norm") > 0.12) or 
-            (getprop("/gear/gear[2]/compression-norm") > 0.12))){
-              setprop("sim/messages/copilot", "You are on water ! Press \"p\" to continue");
-          if(!getprop("sim/freeze/clock"))
-              setprop("sim/freeze/clock", 1);
-          if(!getprop("sim/freeze/master"))
-              setprop("sim/freeze/master", 1);
-          if(!getprop("sim/freeze/clock"))
-              setprop("sim/crashed", 1);
-            }
-        else{
-          if(getprop("sim/freeze/clock"))
-              setprop("sim/freeze/clock", 0);
-          if(getprop("sim/freeze/master"))
-              setprop("sim/freeze/master", 0);
-          if(getprop("sim/freeze/clock"))
-              setprop("sim/crashed", 0);
-        }
-      }
-    }
-  }
 }
 
 ##############################################
@@ -477,7 +434,6 @@ global_system = func{
 
   Fuel();
   mouse_accel();
-  terrain_survol();
   timeFormat();
   EngineMain.update(0);
   if(getprop("/sim/model/config/breakable-gears")){
@@ -542,11 +498,6 @@ var firstEngineStartup = setlistener("/engines/engine/running", func(val) {
 # SetListerner must be at the end of this file
 ##########################################
 setlistener("/sim/signals/fdm-initialized", func{
-  setprop("/environment/terrain-type",1);
-  setprop("/environment/terrain-load-resistance",1e+30);
-  setprop("/environment/terrain-friction-factor",1.05);
-  setprop("/environment/terrain-bumpiness",0);
-  setprop("/environment/terrain-rolling-friction",0.02);
   setprop("/instrumentation/nav[0]/power-btn",0); #force OFF
   setprop("/instrumentation/nav[1]/power-btn",0); #force OFF
   setprop("/instrumentation/adf[0]/power-btn",0);
