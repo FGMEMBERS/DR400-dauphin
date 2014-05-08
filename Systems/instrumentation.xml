@@ -95,6 +95,11 @@ file, these values will be used (they are hardcoded).
     <number>1</number>
   </nav-radio>
 
+  <comm-radio>
+    <name>comm</name>
+    <number>0</number>
+  </comm-radio>
+
   <slip-skid-ball>
     <name>slip-skid-ball</name>
     <number>0</number>
