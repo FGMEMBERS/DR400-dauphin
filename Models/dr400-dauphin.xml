@@ -205,23 +205,13 @@
       <x-m> -1.50 </x-m>
       <y-m> -0.25 </y-m>
       <z-m>  0.0 </z-m>
-      <roll-deg>    0.0 </roll-deg>
-      <pitch-deg>   0.0 </pitch-deg>
-      <heading-deg> 0.0 </heading-deg>
     </offsets>
   </model>
 
-  <!-- Interieur -->
+  <!-- Interior -->
   <model>
     <path>Aircraft/DR400-dauphin/Models/Interior/interior.xml</path>
-    <offsets>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
-      <roll-deg>    0.0 </roll-deg>
-      <pitch-deg>   0.0 </pitch-deg>
-      <heading-deg> 0.0 </heading-deg>
-    </offsets>
+    <usage>interior</usage>
   </model>
 
   <!-- Water effects -->
@@ -251,7 +241,6 @@
       <z-m> -1.1026 </z-m>
     </offsets>
   </model>
-
 
   <!-- Transparent objects -->
   <effect>
