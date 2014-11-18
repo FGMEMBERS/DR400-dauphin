@@ -103,9 +103,6 @@
         <int n="16" alias="/fdm/jsbsim/gear/unit[2]/broken"/>
 
         <float n="0" alias="/position/gear-agl-m">       0 </float>
-        <float n="1" alias="/controls/flight/aileron">   0 </float>
-        <float n="2" alias="/controls/flight/elevator">  0 </float>
-        <float n="3" alias="/controls/flight/rudder">    0 </float>
 
         <float n="4" alias="/systems/electrical/outputs/nav-lights">     0 </float>
         <float n="5" alias="/systems/electrical/outputs/landing-lights"> 0 </float>
