@@ -283,6 +283,15 @@
         <output>fcs/elevator-pos-rad</output>
       </aerosurface_scale>
 
+      <aerosurface_scale name="Elevator Position">
+        <input>fcs/elevator-cmd-norm</input>
+        <range>
+          <min>-1</min>
+          <max>1</max>
+        </range>
+        <output>fcs/elevator-pos-norm</output>
+      </aerosurface_scale>
+
     </channel>
 
     <channel name="Roll">
@@ -304,6 +313,15 @@
         <output>fcs/left-aileron-pos-rad</output>
       </aerosurface_scale>
 
+      <aerosurface_scale name="Left Aileron Position">
+        <input>fcs/aileron-cmd-norm</input>
+        <range>
+          <min>-1</min>
+          <max>1</max>
+        </range>
+        <output>fcs/left-aileron-pos-norm</output>
+      </aerosurface_scale>
+
       <aerosurface_scale name="Right Aileron Control">
         <input>fcs/roll-trim-sum</input>
         <range>
@@ -311,6 +329,15 @@
           <max>  0.35 </max>
         </range>
         <output>fcs/right-aileron-pos-rad</output>
+      </aerosurface_scale>
+
+      <aerosurface_scale name="Right Aileron Position">
+        <input>fcs/aileron-cmd-norm</input>
+        <range>
+          <min>1</min>
+          <max>-1</max>
+        </range>
+        <output>fcs/right-aileron-pos-norm</output>
       </aerosurface_scale>
 
     </channel>
@@ -332,6 +359,15 @@
           <max>  0.35 </max>
         </range>
         <output>fcs/rudder-pos-rad</output>
+      </aerosurface_scale>
+
+      <aerosurface_scale name="Rudder Position">
+        <input>fcs/rudder-cmd-norm</input>
+        <range>
+          <min>1</min>
+          <max>-1</max>
+        </range>
+        <output>fcs/rudder-pos-norm</output>
       </aerosurface_scale>
 
     </channel>
@@ -597,7 +633,7 @@
         <product>
           <property>aero/qbar-psf</property>
           <property>metrics/Sh-sqft</property>
-          <abs><property>fcs/elevator-pos-norm</property></abs>
+          <abs><property>fcs/elevator-pos-rad</property></abs>
           <value>0.04</value>
         </product>
       </function>

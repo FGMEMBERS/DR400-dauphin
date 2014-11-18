@@ -26,7 +26,7 @@ var config_dlg = gui.Dialog.new("/sim/gui/dialogs/config/dialog", getprop("/sim/
 # Canopy
 #####################################
 
-var canopy = aircraft.door.new("controls/canopy", 3);
+var canopy = aircraft.door.new("canopy", 3);
 
 ###############################################
 #Fuel Management (+ Daniel Dubreuil, March 2013)
