@@ -61,8 +61,3 @@
   - Décrochage dissymétrique en virage et en glissade,
   - Effet de sol (d'après le Cessna 172p, merci David Megginson !)
 
-
-
-
-
-
