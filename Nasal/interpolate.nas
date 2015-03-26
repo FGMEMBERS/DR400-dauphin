@@ -1,5 +1,5 @@
 ##
-##  Nasal for DR400-dauphin
+##  Nasal for DR400-jsbSim
 ##
 ##  Clément de l'Hamaide - PAF Team - http://equipe-flightgear.forumactif.com
 ##  This file is licensed under the GPL license version 2 or later.
@@ -70,14 +70,6 @@ setlistener("/controls/lighting/nav-lights", func(v) {
   }
 });
 
-setlistener("/controls/switches/master-avionics", func(v) {
-  if(v.getValue()){
-    interpolate("/controls/switches/master-avionics-pos", 1, 0.25);
-  }else{
-    interpolate("/controls/switches/master-avionics-pos", 0, 0.25);
-  }
-});
-
 setlistener("/controls/gear/brake-parking", func(v) {
   if(v.getValue()){
     interpolate("/controls/gear/brake-parking-pos", 1, 0.25);
@@ -126,11 +118,15 @@ setlistener("/controls/lighting/warning-test", func(v) {
   }
 });
 
-setlistener("/controls/engines/engine/magnetos", func(v) {
-    interpolate("/controls/engines/engine/magnetos-pos", v.getValue(), 0.25);
+setlistener("/controls/fuel/selected-tank", func(v) { # DR400-120-jsbSim
+  if(!v.getValue()){
+    interpolate("/controls/fuel/selected-tank-pos", 1, 0.25);
+  }else{
+    interpolate("/controls/fuel/selected-tank-pos", 0, 0.25);
+  }
 });
 
-var FuelValve = func(angle){
+var FuelValve = func(angle){ # DR400-180-jsbSim
   setprop("/controls/fuel/selected-tank-lock", 1);
   if ( angle == 0)
     interpolate("/controls/fuel/selected-tank-pos", 0, 0.25);
@@ -138,5 +134,9 @@ var FuelValve = func(angle){
     interpolate("/controls/fuel/selected-tank-pos", getprop("/controls/fuel/selected-tank-pos")+(angle), 0.25);
   settimer( func { setprop("/controls/fuel/selected-tank-lock", 0);}, 0.25 );
 }
+
+setlistener("/controls/engines/engine/magnetos", func(v) {
+    interpolate("/controls/engines/engine/magnetos-pos", v.getValue(), 0.25);
+});
 
 

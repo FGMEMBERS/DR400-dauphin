@@ -5,3 +5,9 @@
 
 aircraft.livery.init("Aircraft/DR400-dauphin/Models/Liveries");
 
+setlistener("/sim/model/config/use-dds", func(n) {
+  if ( n.getBoolValue() )
+    aircraft.livery.init("Aircraft/DR400-dauphin/Models/Liveries-dds");
+  else
+    aircraft.livery.init("Aircraft/DR400-dauphin/Models/Liveries");
+});

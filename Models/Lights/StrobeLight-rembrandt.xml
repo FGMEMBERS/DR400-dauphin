@@ -2,7 +2,7 @@
 
 <!-- ########################################
 
- # DR400-dauphin by PAF team
+ # DR400-jsbSim by PAF team
  # April 2012 : Modified by PAF team
  # http://equipe-flightgear.forumactif.com
 
@@ -20,6 +20,21 @@
     <!--<object-name>white-light-plate</object-name>-->
     <object-name>blue-light-plate</object-name>
     <object-name>lnd-light-plate</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>red-light-plate</object-name>
+    <object-name>green-light-plate</object-name>
+    <object-name>white-light-plate</object-name>
+    <object-name>blue-light-plate</object-name>
+    <object-name>lnd-light-plate</object-name>
+
+    <condition>
+      <property>/sim/model/config/use-dds</property>
+    </condition>
+
+    <texture>lights.dds</texture>
   </animation>
 
   <effect>
@@ -126,19 +141,19 @@
     <dim-factor>
       <property>sim/multiplay/generic/float[7]</property>
       <!-- optional begin -->
-      <factor>0.08</factor>
+      <factor>0.008</factor>
       <offset>0</offset>
       <min>0</min>
       <max>1</max>
       <!-- optional end -->
     </dim-factor>
     <attenuation>
-      <c>  0.1 </c>
+      <c>  0.4 </c>
       <l>  0.1 </l>
-      <q>  0.5 </q>
+      <q>  0.6 </q>
     </attenuation>
     <near-m> 0.0  </near-m>
-    <far-m> 60.0  </far-m>
+    <far-m> 30.0  </far-m>
   </animation>
 
   <animation>

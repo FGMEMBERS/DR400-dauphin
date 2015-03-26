@@ -2,7 +2,7 @@
 
 <!-- ########################################
 
- # DR400-dauphin by PAF team
+ # DR400-jsbSim by PAF team
  # April 2012 : Modified by PAF team
  # http://equipe-flightgear.forumactif.com
 
@@ -21,7 +21,7 @@
       <stretch>1</stretch>
     </empty>		
     <text>
-      <label>Robin DR400-dauphin options</label>
+      <label>Robin DR400-jsbSim options</label>
     </text>
     <empty>
       <stretch>1</stretch>
@@ -70,7 +70,7 @@
 
       <checkbox>
         <halign>left</halign>
-        <label>Show Pilot in cockpit view</label>
+        <label>Show Pilot</label>
         <property>sim/model/config/show-pilot</property>
         <binding>
           <command>property-toggle</command>
@@ -80,52 +80,51 @@
 
       <!--<checkbox>
         <halign>left</halign>
+        <label>Show Copilot</label>
+        <property>sim/model/config/show-copilot</property>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/config/show-copilot</property>
+        </binding>
+      </checkbox>-->
+
+      <checkbox>
+        <halign>left</halign>
+        <label>Details High</label>
+        <property>sim/model/config/details-high</property>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/config/details-high</property>
+        </binding>
+      </checkbox>
+
+      <checkbox>
+        <halign>left</halign>
+        <label>Glass reflection</label>
+        <property>sim/model/config/glass-reflection</property>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/config/glass-reflection</property>
+        </binding>
+      </checkbox>
+
+      <checkbox>
+        <halign>left</halign>
         <label>Glass reflection on instruments</label>
         <property>sim/model/config/glass-reflection-instruments</property>
         <binding>
           <command>property-toggle</command>
           <property>sim/model/config/glass-reflection-instruments</property>
         </binding>
-      </checkbox>-->
-
-      <group>
-        <layout>hbox</layout>
-        <text>
-          <label>Realism</label>
-          <halign>left</halign>
-        </text>
-        <hrule>
-          <stretch>true</stretch>
-        </hrule>
-      </group>
-
-      <checkbox>
-        <halign>left</halign>
-        <label>Enable crash</label>
-        <property>sim/model/config/enable-crash</property>
-        <binding>
-          <command>property-toggle</command>
-          <property>sim/model/config/enable-crash</property>
-        </binding>
       </checkbox>
 
       <checkbox>
         <halign>left</halign>
-        <label>Breakable gears</label>
-        <property>sim/model/config/breakable-gears</property>
+        <label>Use DDS images</label>
+        <property>sim/model/config/use-dds</property>
         <binding>
           <command>property-toggle</command>
-          <property>sim/model/config/breakable-gears</property>
-        </binding>
-      </checkbox>
-
-      <checkbox>
-        <halign>left</halign>
-        <label>Simulate G force</label>
-        <property>sim/model/config/simulate-g-force</property>
-        <binding>
-          <command>property-toggle</command>
-          <property>sim/model/config/simulate-g-force</property>
+          <property>sim/model/config/use-dds</property>
         </binding>
       </checkbox>
 
@@ -141,7 +140,6 @@
         <button>
           <legend>Autostart</legend>
           <default>false</default>
-          <pref-width>90</pref-width>
           <binding>
             <command>property-toggle</command>
             <property>sim/model/start-idling</property>
@@ -149,75 +147,68 @@
         </button>
       </group>
 
+      <!--<hrule/>
+
       <group>
         <layout>hbox</layout>
-        <button>
-          <legend>Checklist</legend>
-          <default>false</default>
-          <pref-width>90</pref-width>
-          <binding>
-            <command>dialog-show</command>
-            <dialog-name>checklist</dialog-name>
-          </binding>
-        </button>
+        <text>
+          <label>Select version</label>
+          <halign>left</halign>
+        </text>
       </group>
 
       <group>
         <layout>hbox</layout>
-        <button>
-          <legend>Tutorial</legend>
-          <default>false</default>
-          <pref-width>90</pref-width>
+        <combo>
+          <pref-width>110</pref-width>
+          <property>sim/model/config/version</property>
+          <value>civilian-gray</value>
+          <value>civilian-red</value>
+          <value>military</value>
           <binding>
-            <command>dialog-show</command>
-            <dialog-name>tutorial</dialog-name>
+            <command>dialog-apply</command>
           </binding>
-        </button>
+        </combo>
+      </group>-->
+
+      <hrule/>
+
+      <group>
+        <layout>hbox</layout>
+        <text>
+          <label>Immatriculation</label>
+          <halign>left</halign>
+        </text>
       </group>
 
       <group>
         <layout>hbox</layout>
-        <button>
-          <legend>Liveries</legend>
-          <default>false</default>
-          <pref-width>90</pref-width>
-          <binding>
-            <command>nasal</command>
-            <script>aircraft.livery.dialog.toggle()</script>
-          </binding>
-        </button>
+        <input>
+          <property>/sim/model/immat</property>
+          <type>STRING</type>
+          <width>100</width>
+        </input>
       </group>
-
-      <group>
-        <layout>hbox</layout>
-        <button>
-          <legend>Help</legend>
-          <default>false</default>
-          <pref-width>90</pref-width>
-          <binding>
-            <command>nasal</command>
-            <script>gui.showHelpDialog("/sim/help")</script>
-          </binding>
-        </button>
-      </group>
+ 
     </group>
+
   </group>
 
   <hrule/>
 
-  <group>
-    <layout>vbox</layout>
-    <button>
-      <legend>Close</legend>
-      <default>true</default>
-      <key>Esc</key>
-      <binding>
-        <command>dialog-apply</command>
-      </binding>
-      <binding>
-        <command>dialog-close</command>
-      </binding>
-    </button>
-  </group>
+  <button>
+    <legend>Close</legend>
+    <default>true</default>
+    <key>Esc</key>
+    <binding>
+      <command>dialog-apply</command>
+    </binding>
+    <binding>
+      <command>dialog-close</command>
+    </binding>
+  </button>
 
+  <nasal>
+    <open></open>
+  </nasal>
 </PropertyList>

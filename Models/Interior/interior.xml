@@ -2,8 +2,8 @@
 
 <!-- ########################################
 
- # DR400-dauphin by PAF team
- # April 2012 : Modified by PAF team
+ # DR400-180-jsbSim by PAF team
+ # April 2013 : Modified by PAF team
  # http://equipe-flightgear.forumactif.com
 
 ##########################################-->
@@ -13,120 +13,143 @@
   <path>interior.ac</path>
 
   <animation>
-    <object-name>aux-tank</object-name>
-    <object-name>canopy-int</object-name>
-    <object-name>carb-heat</object-name>
-    <object-name>flaps-command</object-name>
-    <object-name>fuel-selector</object-name>
-    <object-name>interior</object-name>
-    <object-name>left-pedals</object-name>
-    <object-name>light-knob1</object-name>
-    <object-name>light-knob2</object-name>
-    <object-name>manche</object-name>
-    <object-name>parking-brake</object-name>
-    <object-name>poignee-int</object-name>
-    <object-name>radio-knob</object-name>
-    <object-name>right-pedals</object-name>
-    <object-name>throttle</object-name>
-    <object-name>trim-wheel</object-name>
-    <object-name>warning-lights0</object-name>
-  </animation>
+    <!-- Objets opaques -->
+    <object-name>interieur</object-name>
+    <object-name>tour</object-name>
+    <object-name>sieges</object-name>
+    <object-name>ceintures</object-name>
+    <object-name>sono</object-name>
+    <object-name>longeronint</object-name>
+    <object-name>toitverriereint</object-name>
+    <object-name>poignee_canopy</object-name>
 
-   <animation>
-    <type>material</type>
-    <texture>interior.png</texture>
-    <texture-prop>interior-texture</texture-prop>
-    <property-base>sim/model/livery</property-base>
-    <object-name>aux-tank</object-name>
-    <object-name>canopy-int</object-name>
-    <object-name>carb-heat</object-name>
-    <object-name>flaps-command</object-name>
-    <object-name>fuel-selector</object-name>
-    <object-name>interior</object-name>
-    <object-name>left-pedals</object-name>
-    <object-name>light-knob1</object-name>
-    <object-name>light-knob2</object-name>
-    <object-name>manche</object-name>
-    <object-name>parking-brake</object-name>
-    <object-name>poignee-int</object-name>
-    <object-name>radio-knob</object-name>
-    <object-name>right-pedals</object-name>
-    <object-name>throttle</object-name>
-    <object-name>trim-wheel</object-name>
-    <object-name>warning-lights0</object-name>
+    <!-- Objets transparents -->
+    <object-name>intverriere</object-name>
+    <object-name>intverriere2</object-name>
   </animation>
 
   <animation>
     <type>material</type>
-    <object-name>aux-tank</object-name>
-    <object-name>canopy-int</object-name>
-    <object-name>carb-heat</object-name>
-    <object-name>flaps-command</object-name>
-    <object-name>fuel-selector</object-name>
-    <object-name>interior</object-name>
-    <object-name>left-pedals</object-name>
-    <object-name>light-knob1</object-name>
-    <object-name>light-knob2</object-name>
-    <object-name>manche</object-name>
-    <object-name>parking-brake</object-name>
-    <object-name>poignee-int</object-name>
-    <object-name>radio-knob</object-name>
-    <object-name>right-pedals</object-name>
-    <object-name>throttle</object-name>
-    <object-name>trim-wheel</object-name>
-    <object-name>warning-lights0</object-name>
+    <object-name>interieur</object-name>
+    <object-name>tour</object-name>
+    <object-name>sieges</object-name>
+    <object-name>ceintures</object-name>
+    <object-name>sono</object-name>
+    <object-name>longeronint</object-name>
+    <object-name>toitverriereint</object-name>
+    <object-name>poignee_canopy</object-name>
+
     <condition>
-      <not><property>sim/rendering/rembrandt/enabled</property></not>
+      <property>/sim/model/config/use-dds</property>
     </condition>
-    <emission>
-      <red>   0.002 </red>
-      <green> 0.002 </green>
-      <blue>  0.002 </blue>
-      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
-    </emission>
-  </animation>
 
-  <!-- Rudder -->
-  <animation>
-    <type>rotate</type>
-    <object-name>left-pedals</object-name>
-    <property>controls/flight/rudder</property>
-    <factor>20</factor>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-    <center>
-      <x-m> -1.9835 </x-m>
-      <y-m>  0.0000 </y-m>
-      <z-m> -0.2732 </z-m>
-    </center>
+    <texture>interior.dds</texture>
   </animation>
 
   <animation>
-    <type>rotate</type>
-    <object-name>right-pedals</object-name>
-    <property>controls/flight/rudder</property>
-    <factor>-20</factor>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-    <center>
-      <x-m> -1.9835 </x-m>
-      <y-m>  0.0000 </y-m>
-      <z-m> -0.2732 </z-m>
-    </center>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/DR400-dauphin/Models/Effects/glass_shader.png</texture>
+    <object-name>intverriere</object-name>
+    <object-name>intverriere2</object-name>
+
+    <condition>
+      <not><property>/sim/model/config/use-dds</property></not>
+    </condition>
   </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/DR400-dauphin/Models/Effects/glass_shader.dds</texture>
+    <object-name>intverriere</object-name>
+    <object-name>intverriere2</object-name>
+
+    <condition>
+      <property>/sim/model/config/use-dds</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>intverriere</object-name>
+    <object-name>intverriere2</object-name>
+    <condition>
+      <property>sim/model/config/glass-reflection</property>
+    </condition>
+  </animation>
+
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/DR400-dauphin/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -1.474 </x-m>
+      <y-m> -0.251 </y-m>
+      <z-m> -0.029 </z-m>
+    </offsets>
+  </model>
+
+<!-- Plaque interieur canopy -->
+  <model>
+    <path>Aircraft/DR400-dauphin/Models/Interior/Panel/Instruments/plaques/plaque_canopy.xml</path>
+    <offsets>
+      <x-m> -0.991 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.701 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Tableau de bord -->
+  <model>
+    <path>Aircraft/DR400-dauphin/Models/Interior/Panel/panel.xml</path>
+    <offsets>
+      <x-m> -1.859 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.099 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>  -5.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Les palonniers -->
+  <model>
+    <path>Aircraft/DR400-dauphin/Models/Interior/Panel/Instruments/pedals/pedals.xml</path>
+    <offsets>
+      <x-m> -2.047 </x-m>
+      <y-m> -0.234 </y-m>
+      <z-m> -0.225 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/DR400-dauphin/Models/Interior/Panel/Instruments/pedals/pedals.xml</path>
+    <offsets>
+      <x-m> -2.047 </x-m>
+      <y-m>  0.234 </y-m>
+      <z-m> -0.225 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Manche -->
+  <model>
+    <path>Aircraft/DR400-dauphin/Models/Interior/Handle/handle.xml</path>
+    <offsets>
+      <x-m> -1.497 </x-m>
+      <y-m>  0    </y-m>
+      <z-m> -0.21 </z-m>
+    </offsets>
+  </model>
+ 
 
   <!-- Canopy -->
+
   <animation>
     <type>translate</type>
-    <object-name>canopy-int</object-name>
-    <object-name>poignee-int</object-name>
-    <property>canopy/position-norm</property>
+    <object-name>intverriere</object-name>
+    <object-name>longeronint</object-name>
+    <object-name>toitverriereint</object-name>
+    <property>instrumentation/doors/crew/position-norm</property>
     <interpolation>
       <entry><ind> 0.00 </ind><dep> 0.00 </dep></entry>
       <entry><ind> 0.12 </ind><dep> 0.00 </dep></entry>
@@ -141,8 +164,8 @@
  
   <animation>
     <type>rotate</type>
-    <object-name>poignee-int</object-name>
-    <property>canopy/position-norm</property>
+    <object-name>poignee_canopy</object-name>
+    <property>instrumentation/doors/crew/position-norm</property>
     <interpolation>
       <entry><ind>  0.00 </ind><dep>  0.00 </dep></entry>
       <entry><ind>  0.12 </ind><dep> 45.00 </dep></entry>
@@ -151,697 +174,44 @@
     <axis>
       <x>  0 </x>
       <y>  0 </y>
-      <z> -1 </z>
+      <z>  1 </z>
     </axis>
     <center>
-      <x-m> -1.27804 </x-m>
-      <y-m>  0.008921 </y-m>
+      <x-m> -1.064 </x-m>
+      <y-m>  0.000 </y-m>
       <z-m>  0.000 </z-m>
     </center>
   </animation>
 
-  <!-- Yoke -->
   <animation>
-    <type>rotate</type>
-    <object-name>manche</object-name>
-    <property>controls/flight/aileron</property>
-    <factor>1.000000</factor>
-    <center>
-      <x-m> -1.5959 </x-m>
-      <y-m>  0.0018 </y-m>
-      <z-m> -0.2736 </z-m>
-    </center>
-    <axis>
-      <x>1.0000</x>
-      <y>0.0000</y>
-      <z>0.0000</z>
-    </axis>
+    <type>translate</type>
+    <object-name>poignee_canopy</object-name>
+    <property>instrumentation/doors/crew/position-norm</property>
     <interpolation>
-      <entry>
-        <ind>-1.0000</ind><dep>13.3930</dep>
-      </entry>
-      <entry>
-        <ind>1.0000</ind><dep>-13.3930</dep>
-      </entry>
+      <entry><ind> 0.00 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 0.12 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 1.00 </ind><dep> 0.80 </dep></entry>
     </interpolation>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>manche</object-name>
-    <property>controls/flight/elevator</property>
-    <factor>1.000000</factor>
-    <center>
-      <x-m> -1.5959 </x-m>
-      <y-m>  0.0018 </y-m>
-      <z-m> -0.2736 </z-m>
-    </center>
     <axis>
-      <x>0.0000</x>
-      <y>0.9848</y>
-      <z>0.1739</z>
+      <x> -0.0625 </x>
+      <y>  0.0625 </y>
+      <z>  0.000 </z>
     </axis>
-    <interpolation>
-      <entry>
-        <ind>1.0000</ind><dep>-19.5869</dep>
-      </entry>
-      <entry>
-        <ind>-1.0000</ind><dep>19.7054</dep>
-      </entry>
-    </interpolation>
   </animation>
 
-  <animation>
-    <type>select</type>
-    <object-name>manche</object-name>
-    <condition>
-      <property>sim/model/config/show-yokes</property>
-    </condition>
-  </animation>
 
-  <!-- Trims wheel -->
-  <animation>
-    <type>slider</type>
-    <object-name>trim-wheel</object-name>
-    <drag-direction>vertical</drag-direction>
-    <action>
-      <binding>
-        <command>property-adjust</command>
-        <property>controls/flight/elevator-trim</property>
-        <factor>0.01</factor>
-        <min>-1</min>
-        <max>1</max>
-        <wrap>0</wrap>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <label>Elevator trim: %3.2f</label>
-        <tooltip-id>pitch-trim</tooltip-id>
-        <property>controls/flight/elevator-trim</property>
-      </binding>
-    </hovered>
-  </animation>
-
+  
   <animation>
     <type>pick</type>
-    <visible>true</visible>
-    <object-name>trim-wheel</object-name>
-    <action>
-      <button>3</button>
-      <binding>
-        <command>property-adjust</command>
-        <property>controls/flight/elevator-trim</property>
-        <step>0.01</step>
-      </binding>
-    </action>
-    <action>
-      <button>4</button>
-      <binding>
-        <command>property-adjust</command>
-        <property>controls/flight/elevator-trim</property>
-        <step>-0.01</step>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>trim-wheel</object-name>
-    <property>controls/flight/elevator-trim</property>
-    <factor>-180</factor>
-    <center>
-      <x-m> -1.6582 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.1333 </z-m>
-    </center>
-    <axis>
-      <x>0</x>
-      <y>1</y>
-      <z>0</z>
-    </axis>
-  </animation>
-
-  <!-- Parking brake -->
-  <animation>
-    <type>pick</type>
-    <visible>true</visible>
-    <object-name>parking-brake</object-name>
-    <action>
-      <button>0</button>
-      <binding>
-        <command>property-toggle</command>
-        <property>controls/gear/brake-parking</property>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>brake-parking-switch</tooltip-id>
-        <label>Brake parking: %s</label>
-        <mapping>on-off</mapping>
-        <property>controls/gear/brake-parking</property>
-      </binding>
-    </hovered>
-  </animation>
-
-  <animation>
-    <type>translate</type>
-    <object-name>parking-brake</object-name>
-    <property>controls/gear/brake-parking-pos</property>
-    <factor> -0.015 </factor>
-    <axis>
-     <x1-m> -0.003508 </x1-m>
-     <y1-m>  0.000000 </y1-m>
-     <z1-m> -0.001518 </z1-m>
-     <x2-m> -0.035240 </x2-m>
-     <y2-m>  0.000000 </y2-m>
-     <z2-m> -0.012840 </z2-m>
-    </axis>
-  </animation>
-
-  <!-- Carburator heat -->
-  <animation>
-    <type>pick</type>
-    <visible>true</visible>
-    <object-name>carb-heat</object-name>
-    <action>
-      <button>0</button>
-      <binding>
-        <command>property-toggle</command>
-        <property>controls/anti-ice/engine/carb-heat</property>
-      </binding>
-      <binding>
-        <command>property-toggle</command>
-        <property>sim/model/click</property>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>carb-heat-switch</tooltip-id>
-        <label>Carb heat: %s</label>
-        <mapping>on-off</mapping>
-        <property>controls/anti-ice/engine/carb-heat</property>
-      </binding>
-    </hovered>
-  </animation>
-
-  <animation>
-    <type>translate</type>
-    <object-name>carb-heat</object-name>
-    <property>controls/anti-ice/engine/carb-heat-pos</property>
-    <factor> -0.015 </factor>
-    <axis>
-     <x1-m> -1.89851 </x1-m>
-     <y1-m>  0.00000 </y1-m>
-     <z1-m>  0.11888 </z1-m>
-     <x2-m> -1.95096 </x2-m>
-     <y2-m>  0.00000 </y2-m>
-     <z2-m>  0.10998 </z2-m>
-    </axis>
-  </animation>
-
-
-  <!-- Flaps handle -->
-  <animation>
-    <type>rotate</type>
-    <object-name>flaps-command</object-name>
-    <object-name>flapsUp</object-name>
-    <object-name>flapsDown</object-name>
-    <object-name>textosgFlaps</object-name>
-    <property>surface-positions/flap-pos-norm</property>
-    <factor>45</factor>
-    <center>
-      <x-m> -1.2436 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.1589 </z-m>
-    </center>
-    <axis>
-      <x>0</x>
-      <y>1</y>
-      <z>0</z>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>flapsUp</object-name>
+    <object-name>poignee_canopy</object-name>
     <action>
       <button>0</button>
       <binding>
         <command>nasal</command>
-        <script>controls.flapsDown(1)</script>
-      </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>controls.flapsDown(0)</script>
-        </binding>
-      </mod-up>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>flaps-switch</tooltip-id>
-        <label>Flaps: %s °</label>
-        <property>controls/flight/flaps</property>
-        <mapping>nasal</mapping>
-        <script>
-          var f = getprop("/controls/flight/flaps");
-          if ( f == 0.25 ) return '15';
-          if ( f == 1.00 ) return '60';
-          return '0';
-        </script>
-      </binding>
-    </hovered>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>flapsDown</object-name>
-    <action>
-      <button>0</button>
-      <binding>
-        <command>nasal</command>
-        <script>controls.flapsDown(-1)</script>
-      </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>controls.flapsDown(0)</script>
-        </binding>
-      </mod-up>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>flaps-switch</tooltip-id>
-        <label>Flaps: %s °</label>
-        <property>controls/flight/flaps</property>
-        <mapping>nasal</mapping>
-        <script>
-          var f = getprop("/controls/flight/flaps");
-          if ( f == 0.25 ) return '15';
-          if ( f == 1.00 ) return '60';
-          return '0';
-        </script>
-      </binding>
-    </hovered>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>Ball</object-name>
-    <property>instrumentation/magnetic-compass/indicated-heading-deg</property>
-    <center>
-      <x-m> -1.7988 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m>  0.5676 </z-m>
-    </center> 
-    <axis>
-     <x> 0.0 </x>
-     <y> 0.0 </y>
-     <z> 1.0 </z>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>poignee-int</object-name>
-    <action>
-      <button>0</button>
-      <binding>
-        <command>nasal</command>
-        <script>dr400.canopy.toggle();</script>
+        <script>globals.dr400.doorsystem.crewexport();</script>
       </binding>
     </action>
-  </animation>
-
-  <!-- Manette des gazs -->
-  <animation>
-    <type>translate</type>
-    <object-name>throttle</object-name>
-    <property>controls/engines/engine[0]/throttle</property>
-    <factor> 0.097 </factor>
-    <axis>
-     <x1-m> 0.20770 </x1-m>
-     <y1-m> 0.00000 </y1-m>
-     <z1-m> 0.01000 </z1-m>
-     <x2-m> 0.09690 </x2-m>
-     <y2-m> 0.00000 </y2-m>
-     <z2-m> 0.00560 </z2-m>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>slider</type>
-    <object-name>throttle</object-name>
-    <drag-direction>vertical</drag-direction>
-    <action>
-      <binding>
-        <command>property-adjust</command>
-        <property>controls/engines/engine[0]/throttle</property>
-        <factor>0.05</factor>
-        <min>0</min>
-        <max>1</max>
-        <wrap>0</wrap>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <label>Throttle: %3d%%</label>
-        <measure-text>Throttle: 100%</measure-text>
-        <tooltip-id>throttle</tooltip-id>
-        <mapping>percent</mapping>
-        <property>controls/engines/engine[0]/throttle</property>
-      </binding>
-    </hovered>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>throttle</object-name>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <interval-sec>0.05</interval-sec>
-      <binding>
-        <command>property-assign</command>
-        <property>controls/throttle-coupled</property>
-        <value>0</value>
-      </binding>
-      <binding>
-        <command>nasal</command>
-        <script>dr400.set_levers("throttle",0,-1,1);</script>
-      </binding>
-      <mod-up>
-        <binding>
-          <command>property-assign</command>
-          <property>controls/throttle-coupled</property>
-          <value>1</value>
-        </binding>
-      </mod-up>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>throttleUp</object-name>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>/controls/engines/engine[0]/throttle</property>
-        <step type="double">0.05</step>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <label>Throttle: %3d%%</label>
-        <measure-text>Throttle: 100%</measure-text>
-        <tooltip-id>throttle</tooltip-id>
-        <mapping>percent</mapping>
-        <property>controls/engines/engine[0]/throttle</property>
-      </binding>
-    </hovered>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>throttleDown</object-name>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>/controls/engines/engine[0]/throttle</property>
-        <step type="double">-0.05</step>
-      </binding>          
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <label>Throttle: %3d%%</label>
-        <measure-text>Throttle: 100%</measure-text>
-        <tooltip-id>throttle</tooltip-id>
-        <mapping>percent</mapping>
-        <property>controls/engines/engine[0]/throttle</property>
-      </binding>
-    </hovered>
-  </animation>
-
-  <!-- Panel -->
-  <model>
-    <path>Aircraft/DR400-dauphin/Models/Interior/panel.xml</path>
-    <offsets>
-      <x-m> -1.91552 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m>  0.23706 </z-m>
-    </offsets>
-  </model>
-
-  <!-- OSG Text -->
-  <text>
-    <name>textosg</name>
-    <type type="string">literal</type>
-    <text type="string">Throttle</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.014</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <axis-alignment>yz-plane</axis-alignment>
-    <max-height>0.06</max-height>
-    <max-width>0.08</max-width>
-    <font-resolution>
-      <width type="int">64</width>
-      <height type="int">64</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-      <x-m>  0.005 </x-m>
-      <y-m>  0.035 </y-m>
-      <z-m>  0.000 </z-m>
-    </offsets>
-  </text>
-
-  <text>
-    <name>textosg</name>
-    <type type="string">literal</type>
-    <text type="string">Magnetic Compass</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.014</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <axis-alignment>yz-plane</axis-alignment>
-    <max-height>0.06</max-height>
-    <max-width>0.05</max-width>
-    <font-resolution>
-      <width type="int">64</width>
-      <height type="int">64</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-      <x-m>  0.005 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m>  0.000 </z-m>
-    </offsets>
-  </text>
-
-  <text>
-    <name>textosgFlaps</name>
-    <type type="string">literal</type>
-    <text type="string">Flaps Up</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.014</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <axis-alignment>xy-plane</axis-alignment>
-    <max-height>0.06</max-height>
-    <max-width>0.05</max-width>
-    <font-resolution>
-      <width type="int">64</width>
-      <height type="int">64</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-      <x-m>  -1.4287 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.04721 </z-m>
-      <heading-deg> 90 </heading-deg>
-    </offsets>
-  </text>
-
-  <text>
-    <name>textosgFlaps</name>
-    <type type="string">literal</type>
-    <text type="string">Flaps Down</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.014</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <axis-alignment>xy-plane</axis-alignment>
-    <max-height>0.06</max-height>
-    <max-width>0.05</max-width>
-    <font-resolution>
-      <width type="int">64</width>
-      <height type="int">64</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-      <x-m>  -1.3154 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.07115 </z-m>
-      <heading-deg> 90 </heading-deg>
-    </offsets>
-  </text>
-
-  <text>
-    <name>textosg</name>
-    <type type="string">literal</type>
-    <text type="string">Trim Wheel</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.014</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <axis-alignment>xy-plane</axis-alignment>
-    <max-height>0.06</max-height>
-    <max-width>0.05</max-width>
-    <font-resolution>
-      <width type="int">64</width>
-      <height type="int">64</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-      <x-m> -1.650 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.070 </z-m>
-      <heading-deg> 90 </heading-deg>
-    </offsets>
-  </text>
-
-  <text>
-    <name>textosg</name>
-    <type type="string">literal</type>
-    <text type="string">Carb.  heat</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.014</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <axis-alignment>yz-plane</axis-alignment>
-    <max-height>0.06</max-height>
-    <max-width>0.05</max-width>
-    <font-resolution>
-      <width type="int">64</width>
-      <height type="int">64</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-      <x-m> -1.916 </x-m>
-      <y-m>  0.001 </y-m>
-      <z-m>  0.114 </z-m>
-      <pitch-deg> -10.0 </pitch-deg>
-    </offsets>
-  </text>
-
-  <text>
-    <name>textosg</name>
-    <type type="string">literal</type>
-    <text type="string">Park. brake</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.014</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <axis-alignment>yz-plane</axis-alignment>
-    <max-height>0.06</max-height>
-    <max-width>0.08</max-width>
-    <font-resolution>
-      <width type="int">64</width>
-      <height type="int">64</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-      <x-m> -1.902 </x-m>
-      <y-m>  0.001 </y-m>
-      <z-m>  0.034 </z-m>
-      <pitch-deg> -10.0 </pitch-deg>
-    </offsets>
-  </text>
-
-  <text>
-    <name>textosg</name>
-    <type type="string">literal</type>
-    <text type="string">Throttle</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.014</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <axis-alignment>yz-plane</axis-alignment>
-    <max-height>0.06</max-height>
-    <max-width>0.08</max-width>
-    <font-resolution>
-      <width type="int">64</width>
-      <height type="int">64</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-      <x-m> -1.912 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m>  0.214 </z-m>
-      <pitch-deg> -5.0 </pitch-deg>
-    </offsets>
-  </text>
-
-  <text>
-    <name>textosg</name>
-    <type type="string">literal</type>
-    <text type="string">Throttle</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.014</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <axis-alignment>yz-plane</axis-alignment>
-    <max-height>0.06</max-height>
-    <max-width>0.08</max-width>
-    <font-resolution>
-      <width type="int">64</width>
-      <height type="int">64</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-      <x-m> -1.912 </x-m>
-      <y-m> -0.428 </y-m>
-      <z-m>  0.214 </z-m>
-      <pitch-deg> -5.0 </pitch-deg>
-    </offsets>
-  </text>
-
-  <animation>
-    <type>material</type>
-    <object-name>textosg</object-name>
-    <object-name>textosgFlaps</object-name>
-    <emission>
-      <red>   0.8 </red>
-      <green> 0.8 </green>
-      <blue>  0.0 </blue>
-    </emission>
-  </animation>
-
-  <animation>
-    <type>select</type>
-    <object-name>textosg</object-name>
-    <object-name>textosgFlaps</object-name>
-    <condition>
-      <property>sim/panel-hotspots</property>
-    </condition>
   </animation>
 
 </PropertyList>
+

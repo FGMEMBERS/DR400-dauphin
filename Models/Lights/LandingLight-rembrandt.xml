@@ -2,7 +2,7 @@
 
 <!-- ########################################
 
- # DR400-dauphin by PAF team
+ # DR400-jsbSim by PAF team
  # April 2012 : Modified by PAF team
  # http://equipe-flightgear.forumactif.com
 
@@ -20,6 +20,21 @@
     <object-name>white-light-plate</object-name>
     <object-name>blue-light-plate</object-name>
     <!--<object-name>lnd-light-plate</object-name>-->
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>red-light-plate</object-name>
+    <object-name>green-light-plate</object-name>
+    <object-name>white-light-plate</object-name>
+    <object-name>blue-light-plate</object-name>
+    <object-name>lnd-light-plate</object-name>
+
+    <condition>
+      <property>/sim/model/config/use-dds</property>
+    </condition>
+
+    <texture>lights.dds</texture>
   </animation>
 
   <effect>
@@ -88,7 +103,7 @@
       <!--<property>systems/electrical/outputs/landing-lights</property>-->
       <property>sim/multiplay/generic/float[5]</property>
       <!-- optional begin -->
-      <factor>0.02</factor>
+      <factor>0.04</factor>
       <offset>0</offset>
       <min>0</min>
       <max>1</max>
@@ -99,7 +114,7 @@
       <l>  0.000 </l>
       <q>  0.002 </q>
     </attenuation>
-    <exponent> 44.0 </exponent>
+    <exponent> 24.0 </exponent>
     <cutoff>   60.0 </cutoff>
     <near-m>    2.5 </near-m>
     <far-m>   240.0 </far-m>
@@ -120,9 +135,9 @@
   <animation>
     <type>scale</type>
     <object-name>light-volume</object-name>
-    <x-offset> 8.0 </x-offset>
-    <y-offset> 8.0 </y-offset>
-    <z-offset> 8.0 </z-offset>
+    <x-offset> 16.0 </x-offset>
+    <y-offset> 16.0 </y-offset>
+    <z-offset> 16.0 </z-offset>
   </animation>
 
 </PropertyList>

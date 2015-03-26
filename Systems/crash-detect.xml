@@ -2,90 +2,113 @@
 
 <!-- ########################################
 
- # DR400-dauphin by PAF team
- # April 2012 : Modified by PAF team
+ # DR400-120  by PAF team
+ # Oct 2012 : Modified by PAF team
  # http://equipe-flightgear.forumactif.com
 
 ##########################################-->
 
 <system name="crash-detect">
 
- <!-- <property value="0">systems/crash-detect/crashed</property>-->
 
   <channel name="Over-G">
 
-     <fcs_function name="wing-load">
-       <function>
-          <product>
-             <property>accelerations/Nz</property>
-             <property>inertia/weight-lbs</property>
-          </product>
-       </function>
-       <output>systems/crash-detect/wing-load</output>
-     </fcs_function>
-
      <!--
           Detect wing loads that exceed limits.
-          Operational limits are +64,000 lbs and
-          -32,000lbs.  IE. +8 or -4 Gs at 8,000 lbs
-          gross weight  This allows for a 40% engineering
+          Operational limits are +4.4 or -2.2 Gs at 1984 lbs
+          gross weight.  IE +8730 lbs and
+          -4365 lbs.  This allows for a 40% engineering
           margin of safety before actual structural
           failure.   At higher gross weights the wing
           structure will fail at lower G loadings.
-          -->
-     <switch name="over-g-failure">
-          <test logic="AND" value="1">
-                systems/crash-detect/wing-load gt 8500
-                simulation/sim-time-sec gt 1.0
-          </test>
+     -->
 
-          <test logic="AND" value="1">
-                systems/crash-detect/wing-load lt -3500
-                simulation/sim-time-sec gt 1.0
+     <switch name="systems/crash-detect/over-g-damaged">
+          <test value="1">
+                forces/fbz-aero-lbs lt -8730
           </test>
-          <output> systems/crash-detect/over-g-failure </output>
+          <test value="1">
+                forces/fbz-aero-lbs gt 4365
+          </test>
      </switch>
 
-     <switch name="over-g">
-          <test logic="AND" value="1">
-                systems/crash-detect/wing-load gt 6000
-                simulation/sim-time-sec gt 1.0
+     <switch name="systems/crash-detect/over-g-crashed">
+          <test value="1">
+                forces/fbz-aero-lbs lt -12220
           </test>
-
-          <test logic="AND" value="1">
-                systems/crash-detect/wing-load lt -2500
-                simulation/sim-time-sec gt 1.0
+          <test value="1">
+                forces/fbz-aero-lbs gt 6110
           </test>
-          <output> systems/crash-detect/over-g </output>
-     </switch>
-
+     </switch>  
+ 
   </channel>
 
+
+
+
+  <channel name="gear-impact">
+
+     <!-- Detect gear loads that exceed limits (5 Gs) -->
+
+     <switch name="systems/crash-detect/gear-damaged">
+          <test value="1">
+                forces/fbz-gear-lbs lt -9920
+          </test>
+     </switch>
+  
+      <switch name="systems/crash-detect/gear-destroyed">
+          <test value="1">
+                forces/fbz-gear-lbs lt -13890
+          </test>
+     </switch>
+  
+  </channel>
+  
+
+  <channel name="ground-impact">
+
+     <!-- Detect severe ground impact crash (about 10 Gs) -->
+
+     <switch name="systems/crash-detect/total-crash">
+          <test value="1">
+                accelerations/udot-ft_sec2 lt -333
+          </test>
+     </switch>
+  
+  </channel>
+  
+  <channel name="damaged">
+
+     <!-- to display a message by nasal if the aircraft is damaged -->
+
+     <switch name="/sim/damaged">
+        <test value="1">
+           systems/crash-detect/over-g-damaged == 1
+        </test>
+        <test value="1">
+           systems/crash-detect/gear-damaged == 1
+        </test>
+     </switch>
+  
+  </channel>
+   
   <channel name="crashed">
 
-     <!-- end the sim if the aircraft is crashed -->
-     <!--<switch name="systems/crash-detect/FG">
+     <!-- to end the sim by nasal if the aircraft is crashed -->
+
+     <switch name="/sim/crashed">
         <test value="1">
-           systems/crash-detect/crashed == 1
+           systems/crash-detect/over-g-crashed == 1
         </test>
-        <output>/sim/freeze/clock</output>
-        <output>/sim/freeze/main</output>
-        <output>/controls/engines/engine[0]/cutoff</output>
-        <output>/sim/crashed</output>
-     </switch>-->
+        <test value="1">
+           systems/crash-detect/gear-destroyed == 1
+        </test>
+        <test value="1">
+           systems/crash-detect/total-crash == 1
+        </test>
+     </switch>
   
   </channel>
 
-  <channel name="impact-ground">
-
-     <switch name="impact">
-          <test logic="AND" value="1">
-                position/h-agl-ft lt 1.0
-                simulation/sim-time-sec gt 1.0
-          </test>
-          <output>systems/crash-detect/crashed</output>
-     </switch>
-
-  </channel>
 
 </system>

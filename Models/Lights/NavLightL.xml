@@ -2,7 +2,7 @@
 
 <!-- ########################################
 
- # DR400-dauphin by PAF team
+ # DR400-jsbSim by PAF team
  # April 2012 : Modified by PAF team
  # http://equipe-flight-plategear.forumactif.com
 
@@ -20,6 +20,21 @@
     <object-name>white-light-plate</object-name>
     <object-name>blue-light-plate</object-name>
     <object-name>lnd-light-plate</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>red-light-plate</object-name>
+    <object-name>green-light-plate</object-name>
+    <object-name>white-light-plate</object-name>
+    <object-name>blue-light-plate</object-name>
+    <object-name>lnd-light-plate</object-name>
+
+    <condition>
+      <property>/sim/model/config/use-dds</property>
+    </condition>
+
+    <texture>lights.dds</texture>
   </animation>
 
   <animation>
